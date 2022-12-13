@@ -1,6 +1,6 @@
 import React from "react";
 
-const PostsList = ({posts}) => {
+const PostsList = ({ posts }) => {
   return (
     <>
       {posts.map((post) => (
