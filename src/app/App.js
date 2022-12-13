@@ -20,12 +20,12 @@ function App() {
       <NavBar />
       <h1>App</h1>
       <Switch>
+        <Route path="/" exact component={Home} />
         <Route path="/dashboard/stats" component={Stats} />
         <Route path="/dashboard" component={Dashboard} />
         <Route path="/login" component={Login} />
         <Route path="/posts/:postsId" render={(props) => (<Post posts={posts} {...props} />)} />
-        <Route path="/posts" component={PostsList} />
-        <Route path="/" exact component={Home} />
+        <Route path="/posts" render={(props) => (<PostsList posts={posts} {...props} />)} />
       </Switch>
     </div>
   );

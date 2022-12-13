@@ -1,7 +1,13 @@
-import React from 'react';
+import React from "react";
 
-const Post = () => {
-  return ( null );
+const Post = ({ match, posts }) => {
+  const postId = match.params.postId;
+  const getPostById = (id) => {
+    return posts.find((post) => String(post.id) === id)
+  };
+
+  const post = getPostById(postId)
+  return <h2>{post ? post.label : `Post with id:${postId} not found`}</h2>;
 }
 
 export default Post;
